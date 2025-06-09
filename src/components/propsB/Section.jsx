@@ -1,71 +1,51 @@
-import React from 'react'
-import style from './section.module.css'
-import userimg from '../../assets/user.svg'
+// Section.jsx
+import { useState } from 'react';
+import style from './section.module.css';
+import userimg from '../../assets/user.svg';
+import { UserCard } from '../userCard/UserCard';
 
 const frutas = ['manzana', 'pera', 'naranja'];
 
 const users = [
-    {
-        id: 1,
-        name: 'Fantys',
-        description: 'Frontend Develper',
-        image: userimg
-    },
-    {
-        id: 2,
-        name: 'Loopy',
-        description: 'back Develper',
-        image: userimg
-    },
-    {
-        id: 3,
-        name: 'rusty',
-        description: 'senior Develper',
-        image: userimg
-    },
-]
+  { id: 1, name: 'Usuario 1', description: 'saludable',        image: userimg },
+  { id: 2, name: 'Usuario 2', description: 'con padecimiento', image: userimg },
+  { id: 3, name: 'Usuario 3', description: 'condición crítica',image: userimg },
+];
 
-const Section = ({children, title, show}) => {
+export const Section = ({ children, title, show }) => {
+  const [count, setCount] = useState(0);
 
-    const handleClick = (name) => {
-        console.log(`contactando a ${name}`);
-    }
+  
 
   return (
     <div>
-        <p className={style.inicial}>{title || "por defecto" }</p>
-        {children}
-        <p className={style.second}>
-            {
-                show ? <span>aqui se ve activo</span> : <span>no esta activo</span>
-            }
-        </p>
+      <p className={style.inicial}>{title || 'por defecto'}</p>
+      {children}
 
-        <ul>
-            {
-                frutas.map(fruta=><li key={fruta} >{fruta}</li>)
-            }
-        </ul>
+      <p className={style.second}>
+        {show ? <span>Aquí se ve activo</span> : <span>No está activo</span>}
+      </p>
 
-        <hr />
+      <ul>
+        {frutas.map((fruta) => (
+          <li key={fruta}>{fruta}</li>
+        ))}
+      </ul>
 
-            <section className={style.section}>
-                {
-                    users.map(({id, name, description, image})=>{
-                        return(
-                            <div key={id} className={style.tarjeta}>
-                                <img src={image} alt="user" className={style.userimg} />
-                                <h2>{name}</h2>
-                                <p>{description}</p>
-                                <button id={id} className={style.button} onClick={()=>handleClick(name)}>Contactar</button>
-                            </div>
-                        )
-                    })
-                }
-            </section>
+      <hr />
 
+      <p>Total contactos: {count}</p> {/* opcional */}
+
+      <section className={style.section}>
+        {users.map((user) => (
+          <UserCard
+            key={user.id}
+            user={user}
+            
+          />
+        ))}
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default Section

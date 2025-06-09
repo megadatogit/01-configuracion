@@ -13,7 +13,7 @@ import Card from './components/props/Card'
 import { CardA } from './components/propsB/CardA';
 import PanelA from './components/propsB/PanelA'
 import PracA from './components/propsB/PracA'
-import Section from './components/propsB/Section'
+import { Section } from './components/propsB/Section'
 
 
 
@@ -141,6 +141,7 @@ function App() {
       <PracA show={false} />
       <hr />
       <Section title={"hola mundo"} show={false}/>
+
 
     </>
   )
