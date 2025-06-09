@@ -1,0 +1,29 @@
+/* Estilo base del botón */
+.botona {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Variantes del botón */
+.default {
+  background-color: #3498db;
+  color: white;
+}
+
+.primary {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.boton:hover {
+  opacity: 0.8;
+}

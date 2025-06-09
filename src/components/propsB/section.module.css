@@ -1,0 +1,33 @@
+.inicial {
+    color: green;
+    padding: 5rem;
+}
+
+.second {
+    color: blue;
+    padding: 5rem;
+}
+
+ul {
+    padding-left: 5rem;
+    text-align: start;
+}
+
+.userimg {
+    width: 3rem;
+}
+
+.section {
+    margin: 50px auto;
+    
+    width: 90%;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(237, 241, 212);
+}
+
+.tarjeta {
+    border: 3px solid lightblue;
+}

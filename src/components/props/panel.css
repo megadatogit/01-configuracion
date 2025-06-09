@@ -1,0 +1,22 @@
+.panel {
+    margin: 100px auto;
+    padding: 30px auto;
+    width: 90%;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 12px;
+}
+
+.panelTitulo {
+    display: block;
+    margin-left: auto;
+    margin-right: 3px;
+    margin-top: 0px;
+    border-bottom-left-radius: 15px;
+    width: 90%;
+    text-align: start;
+    padding: 1rem;
+    color: #00aa;
+    border-bottom: 1px solid;
+    /* box-shadow: -3px 5px 15px rgba(0,0,0,0.24) ; */
+}
