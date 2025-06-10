@@ -1,5 +1,5 @@
 // Section.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import style from './section.module.css';
 import userimg from '../../assets/user.svg';
 import { UserCard } from '../userCard/UserCard';
@@ -14,6 +14,20 @@ const users = [
 
 export const Section = ({ children, title, show }) => {
   const [count, setCount] = useState(0);
+  
+
+  
+    
+    useEffect(()=>{
+        console.log('useEffect ejecutado')
+    },[count])
+
+    const handleClick = () => {
+      setCount(count + 1)
+    }
+    
+    
+
 
   
 

@@ -14,6 +14,8 @@ import { CardA } from './components/propsB/CardA';
 import PanelA from './components/propsB/PanelA'
 import PracA from './components/propsB/PracA'
 import { Section } from './components/propsB/Section'
+import State from './components/userCard/State'
+import Tareas from './components/userCard/Tareas'
 
 
 
@@ -141,7 +143,12 @@ function App() {
       <PracA show={false} />
       <hr />
       <Section title={"hola mundo"} show={false}/>
+      <hr />
 
+      <State/>
+      <hr />
+
+      <Tareas/>
 
     </>
   )
