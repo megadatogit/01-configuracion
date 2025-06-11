@@ -10,17 +10,48 @@ import Tarjeta from './components/props/Tarjeta'
 import Panel from './components/props/Panel'
 import BotonA from './components/props/BotonA'
 import Card from './components/props/Card'
-import { CardA } from './components/propsB/CardA';
+import { CardA } from './components/propsB/CardA'
 import PanelA from './components/propsB/PanelA'
 import PracA from './components/propsB/PracA'
 import { Section } from './components/propsB/Section'
 import State from './components/userCard/State'
 import Tareas from './components/userCard/Tareas'
+import GraficoBarras from './components/graficos/GraficoBarrasVertical'
+import GraficoBarrasVertical from './components/graficos/GraficoBarrasVertical'
 
 
 
 function App() {
   
+    const datosComidas = [
+      { dia: "Lunes",     comidas: 1 },
+      { dia: "Martes",    comidas: 1 },
+      { dia: "Miércoles", comidas: 5 },
+      { dia: "Jueves",    comidas: 2 },
+      { dia: "Viernes",   comidas: 4 },
+      { dia: "Sábado",    comidas: 5 },
+      { dia: "Domingo",   comidas: 4 }
+    ];
+
+    const datosPresion = [
+      { dia: "Lunes",     presion: 120 },
+      { dia: "Martes",    presion: 115 },
+      { dia: "Miércoles", presion: 130 },
+      { dia: "Jueves",    presion: 125 },
+      { dia: "Viernes",   presion: 140 },
+      { dia: "Sábado",    presion: 135 },
+      { dia: "Domingo",   presion: 130 }
+    ];
+
+    const datosGlucosa = [
+  { dia: "Lun", valor: 95 },
+  { dia: "Mar", valor: 102 },
+  { dia: "Mié", valor: 98 },
+  { dia: "Jue", valor: 100 },
+  { dia: "Vie", valor: 105 },
+  { dia: "Sáb", valor: 110 },
+  { dia: "Dom", valor: 108 }
+];
 
   return (
     <>
@@ -149,6 +180,43 @@ function App() {
       <hr />
 
       <Tareas/>
+      <hr />
+
+
+      <GraficoBarrasVertical
+          tituloEjeX='DÍAS DE LA SEMANA'
+          unidadesEjeX='días registrados / 24hrs'
+          tituloEjeY='COMIDAS AL DÍA'
+          unidadesEjeY='repeticiones al día / ud'
+          datos={datosComidas}
+          valorMaximoY={5}
+
+      />
+
+      <hr/>
+
+      <GraficoBarrasVertical 
+          tituloEjeY="PRESIÓN SISTÓLICA"
+          unidadesEjeY="mmHg"
+          tituloEjeX="DÍAS"
+          unidadesEjeX="día"
+          datos={datosPresion.map(d => ({ dia: d.dia, comidas: d.valor }))}
+          valorMaximoY={150}
+          valorMinimoY={90}
+          colorBarra="#FF6B6B"
+    />
+
+      <hr/>
+      <GraficoBarrasVertical 
+        tituloEjeY="GLUCOSA"
+        unidadesEjeY="mg/dL"
+        tituloEjeX="DÍAS"
+        unidadesEjeX="día"
+        datos={datosGlucosa.map(d => ({ dia: d.dia, comidas: d.valor }))}
+        valorMaximoY={120}
+        valorMinimoY={70}
+        colorBarra="#FECA57"
+      />
 
     </>
   )

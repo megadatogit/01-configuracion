@@ -1,0 +1,30 @@
+.svg {
+    border: 2px dashed greenyellow;
+    width:  30%; 
+    height: 30%;
+}
+
+/* graficoBarrasVertical.module.css */
+.svg {
+  
+  margin: 0 auto;
+}
+
+.barra {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.barra:hover {
+  opacity: 0.8;
+}
+
+.barra {
+    ry: 2;
+    rx: 2;
+    color: #bebebe;
+}
+
+text {
+    
+}
