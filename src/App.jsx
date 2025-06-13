@@ -18,6 +18,8 @@ import State from './components/userCard/State'
 import Tareas from './components/userCard/Tareas'
 import GraficoBarras from './components/graficos/GraficoBarrasVertical'
 import GraficoBarrasVertical from './components/graficos/GraficoBarrasVertical'
+import HandleClick from './components/handleClick/HandleClick'
+import GraficoDonaCompleta from './components/graficos/GraficoDonaCompleta'
 
 
 
@@ -54,6 +56,7 @@ function App() {
 ];
 
   return (
+    
     <>
       <Header title="La página de LS">
         <h3>Esto es el header</h3>
@@ -210,12 +213,33 @@ function App() {
       <GraficoBarrasVertical 
         tituloEjeY="GLUCOSA"
         unidadesEjeY="mg/dL"
+        d
         tituloEjeX="DÍAS"
         unidadesEjeX="día"
         datos={datosGlucosa.map(d => ({ dia: d.dia, comidas: d.valor }))}
         valorMaximoY={120}
         valorMinimoY={70}
         colorBarra="#FECA57"
+      />
+
+      <hr/>
+      <HandleClick />
+
+      <hr/>
+
+      <GraficoDonaCompleta
+        valor={70}
+        titulo="Oxígeno en sangre"
+        unidad="%"
+        tipoGr="completo"
+        colorProgreso="#4ECDC4"
+      />
+      <GraficoDonaCompleta
+        valor={70}
+        titulo="Oxígeno en sangre"
+        unidad="%"
+        tipoGr="medio"
+        colorProgreso="#4ECDC4"
       />
 
     </>
